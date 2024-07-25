@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flexbox Pricing Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Tsukimi+Rounded&family=Varela+Round&display=swap" rel="stylesheet">
+
+    <style>
+    body{
+        font-family: 'Times New Roman', Times, serif ;
+        background-color: rgb(0, 0, 0);
+        color: #040800;
+        
+    }
+    .Container{
+        margin-top: 3rem;
+        display: flex;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .Bar{
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        padding: 1rem;
+        color: whitesmoke;
+    }
+
+    .Plan-Container{
+       min-width: 200px;
+       max-width: 500px;
+       position: relative;
+       flex:1;
+       text-align: left;
+       height: 400px;
+       padding: 40px;
+       border-radius: 10px
+    }
+    
+    .Plan-list{
+        position: absolute;
+        top: 35%;
+        list-style:disc;
+        text-align: left;
+        padding: 0px;
+    }
+
+    .Plan-list li{
+        padding-top: 1rem;
+        font-weight:600;
+    }
+
+    .Plan-Title{
+        font-weight: bolder;
+    }
+    
+    .Plan-Price{
+        font-weight: bolder;
+        font-size: 40px;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .Button{
+        
+        border: none;
+        padding: 15px;
+        background-color: #040800;
+        color: azure;
+        border-radius: 10px;
+        position: absolute;
+        top: 80%;
+    }
+
+    .Plan-Description{
+        font-weight: 600;
+    }
+
+    .Bar-Stuff{
+        font-size: 0.9rem;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom:3em ;
+    }
+
+    #Simple-Plan{
+        background-color:  #e18bec;
+    }
+    
+    #Efficient-Plan{
+        background-color: #5fb9b0;
+    }
+
+    #Team-Plan{
+        background-color: #FFC700;
+    }
+
+    #Monthly-Yearly{
+      display: flex;
+      color: white;
+      justify-content: center;
+    }
+    #Monthly-Yearly>div{
+        background-color: rgb(107, 98, 98);
+        width: 4em;
+        margin:1em;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    #Monthly-Yearly>div>div{
+       background-color: rgb(255, 255, 255);
+       position: absolute;
+       width: 20px;
+       height: 20px;
+       margin-left:2.5em;
+       margin-top: 3px;
+       border-radius: 20px;
+    }
+
+    .Plan-Price>div{
+        display: inline;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    @media(max-width:600px){
+        .Container{
+            margin-top:1em;
+            flex-direction: column;
+            height:100vh;
+            gap: 10px;
+        }
+        .Plan-Container{
+            padding-top: 15px;
+            min-width: 200px;
+        }
+
+        .Plan-list li{
+            padding-top: 0.5rem;
+            font-weight:600;
+        }
+
+        .Plan-Container#Simple-Plan{
+            padding-bottom:200px ;
+        }
+
+        .Plan-Container#Efficient-Plan .Plan-Description{
+            margin-bottom: 160px;
+            font-weight: 900;
+            
+        }
+
+        .Plan-Container#Team-Plan .Plan-Description{
+            margin-bottom: 160px;
+            font-weight: 900;
+            
+        }
+
+        .Plan-Container#Simple-Plan .Button{
+            top: 83%;
+
+            
+        }
+
+
+    }
+    </style>
+
+    
+    
+
+  
+    
+
+        
+</head>
+<body>
+    
+    <div class="Bar"> 
+        <div class="Bar-Stuff">Features</div>
+        <div class="Bar-Stuff">Prices</div>
+        <div class="Bar-Stuff">Integrations</div>
+        <div class="Bar-Stuff">Log In</div>
+        <div class="Bar-Stuff" style="background-color: white; color: black; font-weight: bold;">Get Started</div>
+    </div>
+
+    <div style="color: white; text-align: center; font-size: 5em; font-weight: bold;">Pricing</div>
+    <div id="Monthly-Yearly">
+        <h3>Monthly</h3>
+        <div><div></div></div>
+        <h3>Yearly</h3>
+    </div>
+
+    <div class="Container">
+        <div class="Plan-Container" id="Simple-Plan">
+            <div class="Plan-Title">Simple</div>
+            <div class="Plan-Price">Free</div>
+            <div class="Plan-Description">Free plan for all users</div>
+                <ul class="Plan-list">
+                    <li>Store up to 20 businesses</li>
+                    <li>2 collaborators</li>
+                    <li>Unlimited collaboration</li>
+                    <li>End to end encryption</li>
+                    <li>Mac, PC and Android</li>
+                </ul>
+            <button class="Button">Get Simple Plan</button>
+        </div>
+
+        <div class="Plan-Container" id="Efficient-Plan">
+            <div class="Plan-Title">Efficient</div>
+            <div class="Plan-Price">15$<div>/month</div></div>
+            <div class="Plan-Description">Ideal for individual creators</div>
+                <ul class="Plan-list">
+                    <li>Everything in simple</li>
+                    <li>512 GB of storage</li>
+                    <li>Access to AI suggestions</li>
+                    <li>Email and Text support</li>
+                </ul>
+            <button class="Button">Get Efficient Plan</button>
+        </div>
+        
+        <div class="Plan-Container" id="Team-Plan">
+            <div class="Plan-Title">Team</div>
+            <div class="Plan-Price">25$<div>/month</div></div>
+            <div class="Plan-Description">Ideal for collaborations</div>
+                <ul class="Plan-list">
+                    <li>Unllimited members</li>
+                    <li>1TB of storage</li>
+                    <li>Everything in efficient</li>
+                    <li>Access to 24/7 support</li>
+                </ul>
+            <button class="Button">Get Team Plan</button>
+        </div>
+    </div>
+    
+</body>
+</html>    
